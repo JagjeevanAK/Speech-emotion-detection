@@ -8,10 +8,12 @@
     },
     {
       "src": "backend/serve.py",
-      "use": "@vercel/python",
-      "config": { "runtime": "python3.10" }
+      "use": "@vercel/python"
     }
   ],
+  "functions": {
+    "backend/serve.py": { "runtime": "python3.10" }
+  },
   "routes": [
     {
       "src": "/api/(.*)",
