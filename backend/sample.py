@@ -1,5 +1,4 @@
 import librosa
-import soundfile
 import os, glob, pickle
 import numpy as np
 from sklearn.model_selection import train_test_split
@@ -9,7 +8,6 @@ import keras
 from tensorflow.keras import layers, Sequential
 from tensorflow.keras.layers import Conv1D, Activation, Dropout, Dense, Flatten, MaxPooling1D
 from sklearn.preprocessing import LabelEncoder, OneHotEncoder
-# from keras.utils import np_utils
 from tensorflow.keras import regularizers
 from matplotlib import pyplot as plt
 import seaborn as sn
@@ -37,8 +35,7 @@ if not os.path.exists(data_directory):
     print(f"Data directory {data_directory} not found.")
     # Optionally, provide instructions or code to download the dataset
 else:
-    print(f"Data directory {data_directory} found.")  # Debug statement
-
+    print(f"Data directory {data_directory} found.") 
 # Emotions in the RAVDESS dataset, different numbers represent different emotion
 emotions = {
     '01':'neutral',
@@ -51,7 +48,6 @@ emotions = {
     '08':'surprised'
 }
 
-# Configure logging
 logging.basicConfig(
     level=logging.INFO,
     format='%(asctime)s - %(levelname)s - %(message)s',

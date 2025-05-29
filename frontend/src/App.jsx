@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState, useRef } from 'react';
 import 'tailwindcss/tailwind.css';
 
 function App() {
@@ -116,49 +116,25 @@ function App() {
     return emoji ? emoji : '';
   };
 
-  useEffect(() => {
-    if (predictedEmotion) {
-      const interval = setInterval(() => {
-        const emoji = getEmoji();
-        if (emoji) {
-          const emojiElement = document.createElement('div');
-          emojiElement.textContent = emoji;
-          emojiElement.style.position = 'absolute';
-          emojiElement.style.left = `${Math.random() * 100}%`;
-          emojiElement.style.top = '-50px';
-          emojiElement.style.fontSize = '2rem';
-          emojiElement.style.animation = 'fall 5s linear infinite';
-          document.body.appendChild(emojiElement);
-
-          setTimeout(() => {
-            document.body.removeChild(emojiElement);
-          }, 5000);
-        }
-      }, 500);
-
-      return () => clearInterval(interval);
-    }
-  }, [predictedEmotion]);
-
   const handleBack = () => {
     window.location.reload();
   };
 
   return (
-    <div className={`min-h-screen flex items-center justify-center ${predictedEmotion ? getBackgroundClass() : 'bg-gradient-to-br from-gray-900 via-gray-700 to-gray-300'}`}>
-      <div className="bg-gray-100 p-8 rounded shadow-md w-96">
-        <h1 className="text-2xl font-bold mb-4 text-gray-900">Speech Emotion Detection</h1>
+    <div className={`min-h-screen flex items-center justify-center transition-all duration-500 ease-out ${predictedEmotion ? getBackgroundClass() : 'bg-gradient-to-br from-gray-900 via-gray-700 to-gray-300'}`}>
+      <div className="bg-white/70 backdrop-blur-md p-8 rounded-xl shadow-2xl w-full max-w-md">
+        <h1 className="text-3xl font-bold mb-6 text-gray-900 text-center">Speech Emotion Detection</h1>
         {!mode && (
           <div className="space-y-4">
             <button 
               onClick={() => setMode('upload')}
-              className="w-full bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600"
+              className="w-full bg-blue-600 hover:bg-blue-700 text-white py-3 px-6 rounded-lg font-semibold uppercase tracking-wide shadow-lg transition transform hover:scale-105"
             >
               Upload Audio File
             </button>
             <button 
               onClick={() => setMode('record')}
-              className="w-full bg-green-500 text-white py-2 px-4 rounded hover:bg-green-600"
+              className="w-full bg-green-600 hover:bg-green-700 text-white py-3 px-6 rounded-lg font-semibold uppercase tracking-wide shadow-lg transition transform hover:scale-105"
             >
               Record Audio
             </button>
@@ -175,14 +151,14 @@ function App() {
             {error && <p className="text-red-500 text-sm">{error}</p>}
             <button 
               type="submit" 
-              className="w-full bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600"
+              className="w-full bg-blue-600 hover:bg-blue-700 text-white py-3 px-6 rounded-lg font-semibold uppercase tracking-wide shadow-lg transition transform hover:scale-105"
               disabled={isButtonDisabled}
             >
               Upload and Predict
             </button>
             <button 
               onClick={handleBack}
-              className="w-full bg-gray-500 text-white py-2 px-4 rounded hover:bg-gray-600"
+              className="w-full bg-gray-600 hover:bg-gray-700 text-white py-3 px-6 rounded-lg font-semibold uppercase tracking-wide shadow-lg transition transform hover:scale-105"
             >
               Back
             </button>
@@ -194,13 +170,13 @@ function App() {
               <>
                 <button 
                   onClick={handleStartRecording} 
-                  className="w-full bg-green-500 text-white py-2 px-4 rounded hover:bg-green-600"
+                  className="w-full bg-green-600 hover:bg-green-700 text-white py-3 px-6 rounded-lg font-semibold uppercase tracking-wide shadow-lg transition transform hover:scale-105"
                 >
                   Start Recording
                 </button>
                 <button 
                   onClick={handleBack}
-                  className="w-full bg-gray-500 text-white py-2 px-4 rounded hover:bg-gray-600"
+                  className="w-full bg-gray-600 hover:bg-gray-700 text-white py-3 px-6 rounded-lg font-semibold uppercase tracking-wide shadow-lg transition transform hover:scale-105"
                 >
                   Back
                 </button>
@@ -209,7 +185,7 @@ function App() {
             {recording && (
               <button 
                 onClick={handleStopRecording} 
-                className="w-full bg-red-500 text-white py-2 px-4 rounded hover:bg-red-600"
+                className="w-full bg-red-600 hover:bg-red-700 text-white py-3 px-6 rounded-lg font-semibold uppercase tracking-wide shadow-lg transition transform hover:scale-105"
               >
                 Stop Recording
               </button>
@@ -218,14 +194,14 @@ function App() {
               <>
                 <button 
                   onClick={handleUploadRecording}
-                  className="w-full bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600"
+                  className="w-full bg-blue-600 hover:bg-blue-700 text-white py-3 px-6 rounded-lg font-semibold uppercase tracking-wide shadow-lg transition transform hover:scale-105"
                   disabled={isButtonDisabled}
                 >
                   Upload Recording
                 </button>
                 <button 
                   onClick={handleBack}
-                  className="w-full bg-gray-500 text-white py-2 px-4 rounded hover:bg-gray-600"
+                  className="w-full bg-gray-600 hover:bg-gray-700 text-white py-3 px-6 rounded-lg font-semibold uppercase tracking-wide shadow-lg transition transform hover:scale-105"
                 >
                   Back
                 </button>
@@ -235,7 +211,16 @@ function App() {
         )}
         {loading && <p className="mt-4 text-lg font-semibold text-gray-900">Loading...</p>}
         {predictedEmotion && !loading && (
-          <p className="mt-4 text-lg font-semibold text-gray-900">Predicted Emotion: {predictedEmotion}</p>
+          <div className="flex flex-col items-center space-y-6">
+            <div className="text-8xl animate-shake">{getEmoji()}</div>
+            <p className="text-lg font-semibold text-gray-900">Detected Emotion: {predictedEmotion}</p>
+            <button 
+              onClick={handleBack} 
+              className="bg-gray-500 text-white py-2 px-4 rounded hover:bg-gray-600"
+            >
+              Back
+            </button>
+          </div>
         )}
       </div>
     </div>
