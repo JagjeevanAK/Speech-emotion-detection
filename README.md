@@ -535,15 +535,11 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 For questions, suggestions, or collaborations:
 
 - **GitHub Issues**: [Create an issue](../../issues)
-- **Email**: [Your Email]
-- **LinkedIn**: [Your LinkedIn Profile]
 
 ---
 
 <div align="center">
 
 **⭐ Star this repository if you found it helpful!**
-
-Made with ❤️ and 🤖 AI
 
 </div>
