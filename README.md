@@ -1,4 +1,4 @@
-# 🎤 Speech Emotion Detection System
+# Speech Emotion Detection System
 
 <div align="center">
 
@@ -11,7 +11,7 @@
 
 </div>
 
-## 📋 Table of Contents
+## Table of Contents
 
 - [🎯 Overview](#-overview)
 - [✨ Features](#-features)
@@ -32,7 +32,7 @@
 - [🤝 Contributing](#-contributing)
 - [📄 License](#-license)
 
-## 🎯 Overview
+## Overview
 
 This Speech Emotion Detection System uses advanced machine learning techniques to analyze audio recordings and identify the emotional state of the speaker. The system employs a Convolutional Neural Network (CNN) trained on the RAVDESS dataset to classify emotions with high accuracy.
 
@@ -44,7 +44,7 @@ This Speech Emotion Detection System uses advanced machine learning techniques t
 - 📱 **Responsive Design**: Beautiful, modern interface with Tailwind CSS
 - ⚡ **Real-time Processing**: Fast emotion prediction with immediate results
 
-## ✨ Features
+## Features
 
 ### 🎵 Audio Processing
 - **Multiple Input Methods**: Upload audio files or record directly
@@ -52,20 +52,20 @@ This Speech Emotion Detection System uses advanced machine learning techniques t
 - **Feature Extraction**: MFCC, Chroma, Mel-spectrogram features
 - **Audio Augmentation**: Noise addition and time shifting for robust training
 
-### 🧠 Machine Learning
+### Machine Learning
 - **Deep Learning Model**: CNN architecture for emotion classification
 - **Feature Engineering**: Advanced audio feature extraction using Librosa
 - **Model Training**: Comprehensive training pipeline with validation
 - **Performance Metrics**: Accuracy, F1-score, confusion matrix analysis
 
-### 🎨 User Interface
+### User Interface
 - **Modern Design**: Clean, intuitive interface with Tailwind CSS
 - **Dynamic Theming**: Background changes based on detected emotion
 - **Interactive Elements**: Smooth animations and transitions
 - **Responsive Layout**: Works on desktop and mobile devices
 - **Real-time Feedback**: Visual and audio feedback during recording
 
-## 🔧 Technologies Used
+## Technologies Used
 
 ### Backend
 | Technology | Version | Purpose |
@@ -84,7 +84,7 @@ This Speech Emotion Detection System uses advanced machine learning techniques t
 | ![Tailwind CSS](https://img.shields.io/badge/Tailwind-3.4.15-blue?logo=tailwindcss) | 3.4.15 | Styling framework |
 | ![Axios](https://img.shields.io/badge/Axios-1.7.7-blue) | 1.7.7 | HTTP client |
 
-## 🏗️ System Architecture
+## System Architecture
 
 ```mermaid
 graph TB
@@ -116,7 +116,7 @@ graph TB
     end
 ```
 
-## 📊 Model Performance
+## Model Performance
 
 Our CNN model achieves excellent performance on the RAVDESS dataset:
 
@@ -132,7 +132,7 @@ Our CNN model achieves excellent performance on the RAVDESS dataset:
 - **Optimization**: Adam optimizer with learning rate scheduling
 - **Regularization**: Dropout layers to prevent overfitting
 
-## 🖼️ User Interface
+## User Interface
 
 ### Landing Page
 ![Landing Page](assets/UI/landing-page.png)
@@ -150,7 +150,7 @@ Our CNN model achieves excellent performance on the RAVDESS dataset:
 ![Final Result](assets/UI/Final_result.png)
 *Dynamic emotion display with emoji and color-coded backgrounds*
 
-## ⚙️ Installation
+## Installation
 
 ### Prerequisites
 - Python 3.8+
@@ -191,7 +191,7 @@ cd ../frontend
 npm install
 ```
 
-## 🚀 Usage
+## Usage
 
 ### Starting the Backend Server
 
@@ -265,7 +265,7 @@ IP/
         └── index.css             # Global styles
 ```
 
-## 🎯 Emotions Detected
+## Emotions Detected
 
 The system can detect 8 different emotions with corresponding emojis:
 
@@ -280,7 +280,7 @@ The system can detect 8 different emotions with corresponding emojis:
 | Disgust | 🤢 | Repulsed, disgusted | Green |
 | Surprised | 😲 | Shocked, amazed | Pink |
 
-## 📈 Dataset
+## Dataset
 
 The model is trained on the **RAVDESS (Ryerson Audio-Visual Database of Emotional Speech and Song)** dataset:
 
@@ -296,7 +296,7 @@ The model is trained on the **RAVDESS (Ryerson Audio-Visual Database of Emotiona
 - Standardized emotional expressions
 - Both speech and song modalities
 
-## 🧠 Model Architecture
+## Model Architecture
 
 ### CNN Architecture Details
 
@@ -344,7 +344,7 @@ model = Sequential([
 - **Validation Split**: 20%
 - **Regularization**: Dropout layers (0.25, 0.5)
 
-## 🔄 API Endpoints
+## API Endpoints
 
 ### Backend Endpoints
 
@@ -394,7 +394,7 @@ const response = await fetch('http://127.0.0.1:5000/predict', {
 const data = await response.json();
 ```
 
-## 🎨 Frontend Features
+## Frontend Features
 
 ### Interactive Elements
 
@@ -418,7 +418,7 @@ const data = await response.json();
 - **High Contrast**: Clear visual hierarchy
 - **Audio Alternatives**: Visual feedback for audio cues
 
-## 🔧 Development
+## Development
 
 ### Training New Models
 
@@ -448,7 +448,7 @@ To extend the API functionality:
 2. **Update feature extraction** in the `extract_feature()` function
 3. **Modify emotion mapping** in the emotions dictionary
 
-## 🚨 Troubleshooting
+## Troubleshooting
 
 ### Common Issues
 
@@ -487,7 +487,7 @@ NotAllowedError: Permission denied
 3. **Caching**: Add model caching to reduce startup time
 4. **Batch Processing**: Process multiple files simultaneously
 
-## 🤝 Contributing
+## Contributing
 
 We welcome contributions! Here's how to get started:
 
@@ -522,7 +522,7 @@ git checkout -b feature/amazing-feature
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-## 🙏 Acknowledgments
+## Acknowledgments
 
 - **RAVDESS Dataset**: Livingstone & Russo (2018) for the emotional speech dataset
 - **Librosa**: For excellent audio processing capabilities
@@ -530,7 +530,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 - **React Community**: For the amazing frontend ecosystem
 - **Tailwind CSS**: For the beautiful utility-first CSS framework
 
-## 📞 Contact
+## Contact
 
 For questions, suggestions, or collaborations:
 
